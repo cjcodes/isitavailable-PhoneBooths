@@ -1,9 +1,6 @@
 #include <Bridge.h>
-#include <YunServer.h>
-#include <YunClient.h>
 #include "MotionSensor.h"
 
-YunServer server;
 MotionSensor pb1(2, 1);
 MotionSensor pb2(4, 2);
 
