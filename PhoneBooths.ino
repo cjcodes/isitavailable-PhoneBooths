@@ -1,13 +1,13 @@
 #include <Bridge.h>
 #include "MotionSensor.h"
 
-MotionSensor pb1(2, 1);
-MotionSensor pb2(4, 2);
+int MotionSensor::waitTime = 5;
+
+// Order: Sensor Pin, Remote ID, Red LED, Green LED, http path
+MotionSensor pb1(2, 1, 3, 4);
+MotionSensor pb2(8, 2, 9, 10);
 
 void setup() {
-  Serial.begin(9600);
-
-  // Bridge startup
   pinMode(13, OUTPUT);
   digitalWrite(13, HIGH);
   Bridge.begin();
@@ -17,4 +17,6 @@ void setup() {
 void loop() {
   pb1.pulse();
   pb2.pulse();
+  delay(10);
 }
+
